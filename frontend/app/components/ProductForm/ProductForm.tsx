@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import NotificationMessage from "./../Notifications/NotificationMessage";
 
 interface ProductFormProps {
@@ -11,6 +11,7 @@ export default function ProductForm({ refresh }: ProductFormProps) {
   const [name, setName] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [showForm, setShowForm] = useState(false);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -55,11 +56,15 @@ export default function ProductForm({ refresh }: ProductFormProps) {
     setTimeout(() => {
         setErrorMessage("");
         setSuccessMessage("");
-    }, 8000);
+    }, 5000);
   }
 
+    useEffect(() => {
+    	setShowForm(true);
+    }	, []);
+
   return (
-    <div className="w-full max-w-md flex flex-col gap-4 relative">
+    <div className={`w-full max-w-md flex flex-col gap-4 relative ${showForm ? "translate-y-0" : "translate-y-[-100vh]"} transition-transform duration-300`}>
         <form className="flex flex-col gap-4 rounded shadow-md bg-orange-100 p-6" 
             onSubmit={addNewItem}
             noValidate>

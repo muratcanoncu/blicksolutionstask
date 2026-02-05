@@ -5,6 +5,8 @@
   --color-dark-blue: #0067a2;
   --color-background: #ffffff;
   --color-foreground:#171717;
+  --header-height: 100px;
+  --min-screen-height: calc(100vh-100px);
 }
 
 @media (prefers-color-scheme: dark) {

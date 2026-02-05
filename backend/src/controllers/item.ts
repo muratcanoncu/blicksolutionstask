@@ -37,7 +37,7 @@ router.put("/update/:id", async (req: Request, res: Response) => {
     try {
         const updatedItem = await updateBoughtStatus(req.params.id, req.body.bought);
 
-        res.status(200).json(updatedItem);
+        res.status(200).json({ message: "Item updated", item: updatedItem });
     } catch (error: any) {
         if (error.message === "ITEM_NOT_FOUND") {
         return res.status(404).json({ message: "Item not found" });

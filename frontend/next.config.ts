@@ -7,8 +7,10 @@ const nextConfig: NextConfig = {
         source: "/items/:path*",
         destination: "http://localhost:8000/items/:path*",
       },
+      
     ];
   },
+  devIndicators: false
 };
 
 export default nextConfig;
