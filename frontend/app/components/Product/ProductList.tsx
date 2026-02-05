@@ -55,7 +55,7 @@ export default function ProductList({ items, refresh }: ProductListProps) {
 	}
 
 	return (
-		<div className={`${items.length === 0 ? "translate-y-[100vh]" : "translate-y-0"} transition-transform duration-100 w-full max-w-md xl:max-w-xl flex flex-col relative`}>
+		<div className={`${items.length === 0 ? "translate-y-[100vh]" : "translate-y-0"} transition-transform duration-400 w-full max-w-md xl:max-w-xl flex flex-col relative`}>
 			<table className="shadow-md bg-orange-100 rounded">
 				<thead className="bg-orange-300">
 					<tr>

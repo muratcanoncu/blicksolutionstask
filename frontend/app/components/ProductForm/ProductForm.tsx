@@ -64,7 +64,7 @@ export default function ProductForm({ refresh }: ProductFormProps) {
     }	, []);
 
   return (
-    <div className={`w-full max-w-md flex flex-col gap-4 relative ${showForm ? "translate-y-0" : "translate-y-[-100vh]"} transition-transform duration-300`}>
+    <div className={`w-full max-w-md flex flex-col gap-4 relative ${showForm ? "translate-y-0" : "translate-y-[-100vh]"} transition-transform duration-400`}>
         <form className="flex flex-col gap-4 rounded shadow-md bg-orange-100 p-6" 
             onSubmit={addNewItem}
             noValidate>
