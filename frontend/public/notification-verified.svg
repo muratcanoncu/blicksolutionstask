@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Icons" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 20 20">
+  <g>
+    <circle cx="10" cy="10" r="9.75" style="fill: #184; stroke-width: 0px;"/>
+    <path d="M8.30966,15.22857l-3.87646-3.87646c-.39062-.39062-.39062-1.02344,0-1.41406s1.02344-.39062,1.41406,0l2.4624,2.4624,6.49023-6.49023c.39062-.39062,1.02344-.39062,1.41406,0s.39062,1.02344,0,1.41406l-7.9043,7.9043Z" style="fill: #fdfdfb; stroke-width: 0px;"/>
+  </g>
+</svg>
