@@ -108,7 +108,7 @@ Updates the bought status of an item.
 **Body**
 ```json
 {
-  "bought": true
+  "bought": !bought
 }
 ```
 
@@ -120,7 +120,7 @@ Updates the bought status of an item.
     "_id": "string",
     "name": "Apple",
     "nameKey": "apple",
-    "bought": false,
+    "bought": true,
     "createdAt": "2026-02-05T14:32:10.123Z"
   }
 }
