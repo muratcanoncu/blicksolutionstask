@@ -10,7 +10,6 @@ A simple full stack shopping list application that allows users to add items, ma
 - Delete items from the list
 - Responsive and accessible UI
 - REST API with clear endpoints
-xw
 
 ## Tech Stack
 
