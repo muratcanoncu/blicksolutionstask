@@ -7,7 +7,7 @@ import ProductList  from "./components/Product/ProductList";
 export default function Home() {
      const { items, refresh } = useShoppingItems();
     return (
-        <main className="container mx-auto bg-orange-200 max-w-screen min-h-[calc(100vh-var(--header-height))] py-24">
+        <main className={`container mx-auto bg-orange-200 max-w-screen min-h-[calc(100vh-var(--header-height))] py-24 ${items.length === 0 ? "max-h-[50%]" : ""}`}>
             <div className="flex flex-col items-center gap-24">
                 <ProductForm refresh={refresh}/>
                 <ProductList items={items} refresh={refresh} />

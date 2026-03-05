@@ -27,37 +27,38 @@ export default function ProductForm({ refresh }: ProductFormProps) {
     }
 
     try {
-      const response = await fetch(
-        "/items/add",
-        {
-          method: "POST",
-          headers: {"Content-Type": "application/json",},
-          body: JSON.stringify({ name }),
-        }
-      );
-      const data = await response.json();
-      if (!response.ok) {
-        setSuccessMessage("");
-        setErrorMessage(data.message);
-        throw new Error(response.statusText || "Something went wrong");
-      }
+		const response = await fetch(
+			"/items/add",
+			{
+			method: "POST",
+			headers: {"Content-Type": "application/json",},
+			body: JSON.stringify({ name }),
+			}
+		);
+		const data = await response.json();
+		if (!response.ok) {
+			setSuccessMessage("");
+			setErrorMessage(data.message);
+			throw new Error(response.statusText || "Something went wrong");
+		}
 
-      refresh();
-      setName("");
-      setErrorMessage("");
-      setSuccessMessage(data.message);
-    } catch (error) {
-      console.error("Error:", error);
+		refresh();
+		setName("");
+		setErrorMessage("");
+		setSuccessMessage(data.message);
+		} catch (error) {
+			console.error("Error:", error);
+		} finally {
+			clearMessages()
+		}
+    };
+
+    const clearMessages = () => {
+		setTimeout(() => {
+			setErrorMessage("");
+			setSuccessMessage("");
+		}, 2500);
     }
-    clearMessages()
-  };
-
-  const clearMessages = () => {
-    setTimeout(() => {
-        setErrorMessage("");
-        setSuccessMessage("");
-    }, 5000);
-  }
 
     useEffect(() => {
     	setShowForm(true);
@@ -79,9 +80,9 @@ export default function ProductForm({ refresh }: ProductFormProps) {
                 Add item
             </button>
         </form>
-		<div className="absolute -bottom-10 w-full text-black text-sm empty:hidden">
-			<NotificationMessage message={errorMessage || successMessage}  type={errorMessage ? "error" : "success"}/>
-		</div>
+        <div className="absolute -bottom-10 w-full text-black text-sm empty:hidden">
+          <NotificationMessage message={errorMessage || successMessage}  type={errorMessage ? "error" : "success"}/>
+        </div>
     </div>
   );
 }

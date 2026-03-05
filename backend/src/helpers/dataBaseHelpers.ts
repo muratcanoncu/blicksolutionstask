@@ -33,7 +33,7 @@ export async function updateBoughtStatus(id: string, bought: boolean) {
   const updatedItem = await ShoppingItem.findByIdAndUpdate(
     id,
     { bought },
-    { new: true }
+    { returnDocument: 'after' } // return the updated document
   );
 
   if (!updatedItem) {

@@ -16,7 +16,7 @@ router.post("/add", async (req: Request, res: Response) => {
         const item = await createShoppingItem(req.body);
 
         res.status(201).json({
-        message: "Item added successfully!",
+        message: item.name + " is added to the list successfully!",
         item,
         });
     } catch (error: any) {

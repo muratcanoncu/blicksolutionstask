@@ -6,7 +6,8 @@
     "dev:frontend": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "install:frontend" : "npm install"
   },
   "dependencies": {
     "next": "16.1.6",
