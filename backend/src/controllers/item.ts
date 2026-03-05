@@ -34,8 +34,9 @@ router.post("/add", async (req: Request, res: Response) => {
 
 // PUT update bought status
 router.put("/update/:id", async (req: Request, res: Response) => {
+    const itemId = req.params.id;
     try {
-        const updatedItem = await updateBoughtStatus(req.params.id, req.body.bought);
+        const updatedItem = await updateBoughtStatus(itemId, req.body.bought);
 
         res.status(200).json({ message: "Item updated", item: updatedItem });
     } catch (error: any) {
