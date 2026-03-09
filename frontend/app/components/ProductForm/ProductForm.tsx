@@ -80,7 +80,7 @@ export default function ProductForm({ refresh }: ProductFormProps) {
                 Add item
             </button>
         </form>
-        <div className="absolute -bottom-10 w-full text-black text-sm empty:hidden">
+        <div className="absolute top-full w-full text-black text-sm empty:hidden">
           <NotificationMessage message={errorMessage || successMessage}  type={errorMessage ? "error" : "success"}/>
         </div>
     </div>

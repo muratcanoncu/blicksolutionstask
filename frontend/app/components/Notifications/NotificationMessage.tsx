@@ -13,7 +13,7 @@ export default function NotificationMessage({ message, type }: NotificationMessa
   const bgColor = type === "error" ? "bg-red-400" : "bg-green-400";
 
   return (
-    <div className={`flex gap-2 p-2 rounded text-white ${bgColor}`}>
+    <div className={`flex gap-2 p-2 rounded text-white break-all mt-4 ${bgColor}`}>
 		<Image
 			className="h-5 w-5"
 			alt={`${type}_icon`}
