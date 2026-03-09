@@ -20,7 +20,6 @@ export default function ProductList({ items, refresh }: ProductListProps) {
 			});
 			const data = await response.json();
 			refresh();
-			setMessage('Item is successfully deleted!');
 			setMessage(`You deleted "${data.data.name}"!`);
 		} catch (error) {
 			console.error("Delete failed:", error);
@@ -28,7 +27,7 @@ export default function ProductList({ items, refresh }: ProductListProps) {
 		clearMessages();
 	};
 
-	const toggleBought = async (e: React.MouseEvent<HTMLElement>, id: string, bought: boolean) => {
+	const toggleBought = async (id: string, bought: boolean) => {
 		try {
 			const response = await fetch(`/items/update/${id}`, {
 				method: "PUT",
@@ -65,17 +64,17 @@ export default function ProductList({ items, refresh }: ProductListProps) {
 						<tr key={item._id} className={`${item.bought ? "line-through text-orange-400" : ""} ${index === items.length - 1 ? '' : 'border-b border-orange-300'} group`} >
 							<td className="p-3 pl-0 flex">
 								<label className="flex items-center justify-center cursor-pointer px-3" 
-									htmlFor={`item-${item._id}`} tabIndex={0}  onKeyDown={(e) => e.key === "Enter" && toggleBought(e, item._id, item.bought)} >
+									htmlFor={`item-${item._id}`} tabIndex={0}  onKeyDown={(e) => e.key === "Enter" && toggleBought(item._id, item.bought)} >
 									<input
 										id={`item-${item._id}`}
 										type="checkbox"
 										checked={item.bought}
 										className="h-5 w-5 cursor-pointer"
-										onChange={(e) => toggleBought(e, item._id, item.bought)}
+										onChange={() => toggleBought(item._id, item.bought)}
 										tabIndex={-1}
 									/>
 								</label>
-								<span onClick={(e) => toggleBought(e, item._id, item.bought)} className="cursor-pointer p-3">{item.name}</span>
+								<span onClick={() => toggleBought(item._id, item.bought)} className="cursor-pointer p-3">{item.name}</span>
 								<button className="invisible opacity-0 group-hover:visible group-focus-within:visible group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-200 rounded cursor-pointer py-2 px-3 bg-red-400" onClick={() => deleteItem(item._id)}>
 									<Image src="/bin.svg" alt="garbage_bin" title="Delete item" width={18} height={18} className="text-white"/>
 								</button>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, ChangeEvent, FormEvent, useEffect } from "react";
+import React, { useState, ChangeEvent, useEffect } from "react";
 import NotificationMessage from "./../Notifications/NotificationMessage";
 
 interface ProductFormProps {
@@ -17,7 +17,7 @@ export default function ProductForm({ refresh }: ProductFormProps) {
     setName(e.target.value);
   };
 
-  const addNewItem = async (e: FormEvent<HTMLFormElement>) => {
+  const addNewItem = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!name.trim()) {

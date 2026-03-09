@@ -5,6 +5,7 @@ import { useState, useEffect, useCallback } from "react";
 export interface ShoppingItem {
   _id: string;
   name: string;
+  nameKey: string
   bought: boolean;
   createdAt: string;
 }
