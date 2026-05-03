@@ -1,8 +1,7 @@
 import mongoose, { ConnectOptions } from "mongoose";
 
 const dataBaseUri: string =
-	process.env.MONGODB_URI ||
-	"mongodb+srv://shopifyuser:blick123shopify@blicksolutionsdb.nydqghm.mongodb.net/?appName=blickSolutionsDB";
+	process.env.MONGODB_URI;
 
 	const clientOptions: ConnectOptions = {
 	serverApi: {

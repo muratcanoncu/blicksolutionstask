@@ -1,4 +1,4 @@
-# 🛒 Full Stack Shopping List App Blicksolutions
+# 🛒 Full Stack Shopping List App
 
 A simple full stack shopping list application that allows users to add items, mark them as bought, and remove them from the list.
 
@@ -32,7 +32,7 @@ The backend requires a `.env` file to run.
 Create a `.env` file inside the **backend** directory and add following properties:
 
 PORT=8000
-MONGODB_URI=mongodb+srv://shopifyuser:blick123shopify@blicksolutionsdb.nydqghm.mongodb.net/?appName=blickSolutionsDB
+MONGODB_URI=
 
 
 ## Running the Application
