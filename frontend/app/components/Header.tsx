@@ -1,8 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
-
 export default function Header() {
   return (
     <header className="flex items-center justify-around flex-col sm:flex-row w-full py-6 px-16 sticky top-0 left-0 right-0 bg-teal-500 z-10 h-(var(--header-height))">

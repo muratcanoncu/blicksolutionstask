@@ -1,7 +1,7 @@
 import mongoose, { ConnectOptions } from "mongoose";
 
 const dataBaseUri: string =
-	process.env.MONGODB_URI;
+	process.env.MONGODB_URI || "";
 
 	const clientOptions: ConnectOptions = {
 	serverApi: {
